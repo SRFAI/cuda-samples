@@ -166,7 +166,7 @@ NVCC          := $(CUDA_PATH)/bin/nvcc -ccbin $(HOST_COMPILER)
 # internal flags
 NVCCFLAGS   := -m${TARGET_SIZE}
 CCFLAGS     :=
-LDFLAGS     :=
+LDFLAGS     := 
 
 # build flags
 
@@ -319,7 +319,7 @@ endif
 
 ALL_CCFLAGS += --threads 0 --std=c++11
 
-LIBRARIES += -lcufft
+LIBRARIES += -L$(CUDA_PATH)/lib -lcufft
 
 ifeq ($(SAMPLE_ENABLED),0)
 EXEC ?= @echo "[@]"

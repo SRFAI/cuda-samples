@@ -359,7 +359,8 @@ endif
 
 ALL_CCFLAGS += -dc -std=c++11 --threads 0
 
-LIBRARIES += -L/usr/lib/x86_64-linux-gnu -L/usr/lib64 -lcufft_static -lculibos
+#LIBRARIES += -L/usr/lib/x86_64-linux-gnu -L/usr/lib64 -lcufft_static -lculibos
+LIBRARIES += -L$(CUDA_PATH)/lib -lcufft_static -lculibos
 
 ifeq ($(SAMPLE_ENABLED),0)
 EXEC ?= @echo "[@]"

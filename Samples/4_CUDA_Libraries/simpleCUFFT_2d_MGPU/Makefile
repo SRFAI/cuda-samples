@@ -319,7 +319,7 @@ endif
 
 ALL_CCFLAGS += --threads 0 --std=c++11
 
-LIBRARIES += -lcufft
+LIBRARIES += -L$(CUDA_PATH)/lib -lcufft
 
 ifeq ($(SAMPLE_ENABLED),0)
 EXEC ?= @echo "[@]"
